@@ -1,7 +1,11 @@
 # インストールするrubyのバージョン指定
 FROM ruby:2.7.1
 
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client wget sudo vim
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn wget sudo vim
+
 RUN mkdir /omusubi
 WORKDIR /omusubi
 COPY Gemfile /omusubi/Gemfile
