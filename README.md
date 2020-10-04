@@ -27,7 +27,7 @@ Things you may want to cover:
 Omusubi
 
 ## サービス名
-未定
+ENむすび
 
 ## エレベーターピッチ
 * インスタ映えするスポットがわからない問題を解決したい
@@ -37,7 +37,7 @@ Omusubi
 * インターネットの観光地検索とは違いその場所への時間やルートが示されるため効率よくインスタ映えスポットを巡ることができる。
 
 ## 実行環境のURL
-未定
+https://enpit-omusubi.herokuapp.com/
 
 ## travis CI や Circle CI のURL
 未定
