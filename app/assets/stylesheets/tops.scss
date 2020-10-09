@@ -2,6 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-p.image_size {
-    width: 200px;  /* 横幅を200pxに */
+h1 {
+    color: green;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    position: relative;
+    flex-basis: 25%;
+}
+
+.item:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    object-fit: cover;
 }
