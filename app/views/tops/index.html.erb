@@ -4,8 +4,18 @@
 画像をクリックするとmapが表示されます。
 
 <div class="container">
-    <% @images.each do |image| %>
-        <div class="item"><%= link_to image_tag("/#{image.image_path}")%></div><br>
-    <% end %>
+    <div id="main">
+        <ul class="image-list">
+            <% @images.each do |image| %>
+                <li>
+                    <div class="image-box">
+                        <%= link_to image_tag("/#{image.image_path}")%>
+                        <input class="disabled-checkbox" type="checkbox" onclick="return false">
+                    </div>
+                </li>
+            <% end %>
+        </ul>
+    </div>
 </div>
 
+こんにちは
