@@ -3,8 +3,8 @@
 これはインスタ映えしそう！！　今すぐ行け！！！！
 画像をクリックするとmapが表示されます。
 
-<div class="container">
-    <%= form_with url: '/', method: :post do |form| %>
+<%= form_with url: '/', method: :post do |form| %>
+    <div class="container">
         <% @images.each do |image| %>
             <div class="item">
                 <%= image_tag("/#{image.image_path}",:class => "thumbnail") %>
@@ -12,5 +12,5 @@
             </div>
         <% end %>
         <%= form.submit "ルート検索" %>
-    <% end %>
-</div>
+    </div>
+<% end %>
