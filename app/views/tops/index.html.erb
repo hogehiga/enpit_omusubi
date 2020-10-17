@@ -4,10 +4,13 @@
 画像をクリックするとmapが表示されます。
 
 <div class="container">
-    <% @images.each do |image| %>
-        <div class="item">
-            <%= image_tag("/#{image.image_path}",:class => "thumbnail") %>
-            <input type="checkbox" name="<%= image.image_path %>"class="disabled_checkbox" checked>
-        </div>
+    <%= form_with url: '/', method: :post do |form| %>
+        <% @images.each do |image| %>
+            <div class="item">
+                <%= image_tag("/#{image.image_path}",:class => "thumbnail") %>
+                <input type="checkbox" name="images[]" value="<%= image.id %>" class="disabled_checkbox">
+            </div>
+        <% end %>
+        <%= form.submit "ルート検索" %>
     <% end %>
 </div>

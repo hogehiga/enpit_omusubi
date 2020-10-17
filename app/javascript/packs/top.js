@@ -7,5 +7,7 @@ $(document).on('turbolinks:load', function() {
   $('img.thumbnail').click(function() {
     // チェックを切り替えます
     $(this).toggleClass('checked');
+    var nextCheckbox = $(this).next('input[type=checkbox]');
+    nextCheckbox.attr("checked", !nextCheckbox.attr('checked'));
   });
 });
