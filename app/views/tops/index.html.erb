@@ -6,8 +6,8 @@
 <div class="container">
     <% @images.each do |image| %>
         <div class="item">
-            <%= link_to image_tag("/#{image.image_path}",:class => "thumbnail")%>
-            <input class="disabled_checkbox" type="checkbox" checked/>
-        </div><br>
+            <%= image_tag("/#{image.image_path}",:class => "thumbnail") %>
+            <input type="checkbox" name="<%= image.image_path %>"class="disabled_checkbox" checked>
+        </div>
     <% end %>
 </div>
