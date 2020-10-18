@@ -14,12 +14,17 @@
     です。
 <% end %>
 
-<%= form_with url: '/', method: :post, local: true do |form| %>
+<%= form_with model: @navigate_form, url: '/', method: :post, local: true do |form| %>
     <div class="container">
         <% @images.each do |image| %>
             <div class="item">
-                <%= image_tag("/#{image.image_path}",:class => "thumbnail") %>
-                <input type="checkbox" name="images[]" value="<%= image.id %>" class="disabled_checkbox">
+                <% if @navigate_form.images && @navigate_form.images.include?(image.id.to_s) %>
+                    <%= image_tag("/#{image.image_path}",:class => "thumbnail checked") %>
+                    <input type="checkbox" name="images[]" value="<%= image.id %>" class="disabled_checkbox" checked>
+                <% else %>
+                    <%= image_tag("/#{image.image_path}",:class => "thumbnail") %>
+                    <input type="checkbox" name="images[]" value="<%= image.id %>" class="disabled_checkbox">
+                <% end %>
             </div>
         <% end %>
         <%= form.submit "ルート検索" %>
