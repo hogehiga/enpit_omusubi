@@ -7,7 +7,8 @@
     <% @images.each do |image| %>
         <div class="item">
             <%= link_to image_tag("/#{image.image_path}",:class => "thumbnail")%>
-            <input class="disabled_checkbox" type="checkbox" checked/>
+            <input class="disabled_checkbox" type="checkbox"/>
         </div><br>
     <% end %>
 </div>
+<button onclick="location.href='tops/go_to_list.html'">go</button>
