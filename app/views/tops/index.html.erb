@@ -3,7 +3,18 @@
 これはインスタ映えしそう！！　今すぐ行け！！！！
 画像をクリックするとmapが表示されます。
 
-<%= form_with url: '/', method: :post do |form| %>
+<% if @route %>
+    <br>
+    最適ルートは
+    <ul><li>現在地</li>
+    <% @route.each do |i| %>
+        <li><%= i.name %></li>
+    <% end %>
+    </ul>
+    です。
+<% end %>
+
+<%= form_with url: '/', method: :post, local: true do |form| %>
     <div class="container">
         <% @images.each do |image| %>
             <div class="item">

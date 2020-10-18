@@ -4,6 +4,8 @@ class TopsController < ApplicationController
     end
 
     def navigate
-        puts params
+        @route = Image.find(params['images']).shuffle
+        @images = Image.all
+        render :index
     end
 end
