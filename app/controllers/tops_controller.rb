@@ -5,9 +5,16 @@ class TopsController < ApplicationController
     end
 
     def navigate
-        @route = Image.find(params['images']).shuffle
         @navigate_form = NavigateForm.new
         @navigate_form.images = params['images']
+
+        unless @navigate_form.valid?
+          @images = Image.all
+          render :index
+          return
+        end
+
+        @route = Image.find(params['images']).shuffle
         @images = Image.all
         render :index
     end

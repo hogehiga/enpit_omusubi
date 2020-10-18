@@ -3,6 +3,11 @@
 これはインスタ映えしそう！！　今すぐ行け！！！！
 画像をクリックするとmapが表示されます。
 
+<% if @navigate_form.errors.any? %>
+    <% @navigate_form.errors.full_messages.each do |msg| %>
+    <%= msg %>
+    <% end %>
+<% end %>
 <% if @route %>
     <br>
     最適ルートは
