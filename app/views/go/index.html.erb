@@ -1,1 +1,5 @@
-<%= @images %>
+<% dir_url = "https://www.google.co.jp/maps/dir"%>
+<% @images.each do |image| %>
+  <% dir_url = dir_url + "/" + image %>
+<% end %>
+<%= link_to "経路を表示", dir_url %>
