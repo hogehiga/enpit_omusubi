@@ -2,7 +2,7 @@
 
 これはインスタ映えしそう！！　今すぐ行け！！！！
 画像をクリックするとmapが表示されます。
-<%= form_with url: go_path do |f| %>
+<%= form_with(url: go_path, local: true) do |f| %>
 <div class="container">
     <% @images.each do |image| %>
         <div class="item">
