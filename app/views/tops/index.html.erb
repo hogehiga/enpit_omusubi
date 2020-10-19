@@ -4,11 +4,14 @@
 画像をクリックするとmapが表示されます。
 
 <div class="container">
+<%= form_with url: go_path do |f| %>
     <% @images.each do |image| %>
         <div class="item">
             <%= link_to image_tag("/#{image.image_path}",:class => "thumbnail")%>
-            <input class="disabled_checkbox" type="checkbox"/>
         </div><br>
+        <%= check_box_tag "go_image_name[#{ image.name }]", image.name %>
     <% end %>
+    <%= f.submit "go" %>
+<% end %>
+
 </div>
-<button onclick="location.href='tops/go_to_list.html'">go</button>
