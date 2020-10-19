@@ -2,16 +2,17 @@
 
 これはインスタ映えしそう！！　今すぐ行け！！！！
 画像をクリックするとmapが表示されます。
-
-<div class="container">
 <%= form_with url: go_path do |f| %>
+<div class="container">
     <% @images.each do |image| %>
         <div class="item">
             <%= link_to image_tag("/#{image.image_path}",:class => "thumbnail")%>
+            <div class="disabled_checkbox">
+            <%= check_box_tag "go_image_name[#{ image.name }]", image.name %>
+            </div>
         </div><br>
-        <%= check_box_tag "go_image_name[#{ image.name }]", image.name %>
     <% end %>
-    <%= f.submit "go" %>
+</div>
+<%= f.submit "go" %>
 <% end %>
 
-</div>

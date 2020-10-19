@@ -35,14 +35,14 @@ img {
     object-fit: cover;
 }
 
-.item .disabled_checkbox {
+.disabled_checkbox {
   /* チェックボックスの位置は絶対位置にします。 */
   position: absolute;
   /* チェックボックスは、親要素の右上から12pxの位置に配置します。 */
   top: 12px;
   right: 12px;
 }
-.item img.thumbnail{
+img.thumbnail{
   width: 100%;
   height: 100%;
 }
