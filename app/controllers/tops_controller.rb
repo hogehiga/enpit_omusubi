@@ -13,9 +13,9 @@ class TopsController < ApplicationController
           return
         end
 
-        @route = Image.find(@navigate_form.images).shuffle
+        @route = Image.approximate_shortest_route(@navigate_form.images.map(&:to_i))
         @images = Image.all
-        render :index
+        redirect_to "https://www.google.co.jp/maps/dir/#{@route.map(&:name).join('/')}"
     end
 
     private

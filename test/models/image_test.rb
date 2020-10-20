@@ -4,4 +4,9 @@ class ImageTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+
+  test "approximate_shortest_route_一枚" do
+    route = Image.approximate_shortest_route(images(:one))
+    assert_equals route.length 1
+  end
 end

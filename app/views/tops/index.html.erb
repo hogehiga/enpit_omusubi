@@ -8,16 +8,6 @@
     <%= msg %>
     <% end %>
 <% end %>
-<% if @route %>
-    <br>
-    最適ルートは
-    <ul><li>現在地</li>
-    <% @route.each do |i| %>
-        <li><%= i.name %></li>
-    <% end %>
-    </ul>
-    です。
-<% end %>
 
 <%= form_with model: @navigate_form, url: '/', method: :post, local: true do |form| %>
     <div class="container">
