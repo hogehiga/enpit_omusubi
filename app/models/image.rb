@@ -21,7 +21,6 @@ class Image < ApplicationRecord
     dests.each do |i|
       tmp << {image: i, distance: Math.sqrt((i.lat - src.lat) ** 2 + (i.lng - src.lng) ** 2) }
     end
-    tmp.sort{ |i, j| i[:distance] <=> j[:distance] }
-    return tmp.last[:image]
+    return tmp.sort{ |i, j| i[:distance] <=> j[:distance] }.first[:image]
   end
 end

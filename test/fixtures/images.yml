@@ -15,8 +15,13 @@ kourijima:
   lat: 10
   lng: 10
 
+basutaminaru:
+  name: 那覇バスターミナル
+  lat: 4.5
+  lng: 4.5
+
 ouujima:
   name: 奥武島
   lat: 3
-  lng: 0
+  lng: 3
 # column: value
