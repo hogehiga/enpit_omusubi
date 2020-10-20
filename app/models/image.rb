@@ -10,6 +10,7 @@ class Image < ApplicationRecord
       nearest = find_nearest(src, dests)
       dests.delete(nearest)
       images << nearest
+      src = nearest
     end
     return images
   end

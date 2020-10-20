@@ -71,4 +71,14 @@ class ImageTest < ActiveSupport::TestCase
     assert_equal images(:syurijou), route[2]
     assert_equal images(:kourijima), route[3]
   end
+
+  test "approximate_shortest_route_5枚_nearestバグ出し" do
+    route = Image.approximate_shortest_route(images(:_6_6).id, [images(:syurijou), images(:ouujima), images(:kourijima), images(:basutaminaru)].map(&:id))
+    assert_equal route.length, 5
+    assert_equal images(:_6_6), route[0]
+    assert_equal images(:basutaminaru), route[1]
+    assert_equal images(:ouujima), route[2]
+    assert_equal images(:syurijou), route[3]
+    assert_equal images(:kourijima), route[4]
+  end
 end
