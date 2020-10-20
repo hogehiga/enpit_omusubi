@@ -14,4 +14,9 @@ kourijima:
   name: 古宇利島
   lat: 10
   lng: 10
+
+ouujima:
+  name: 奥武島
+  lat: 3
+  lng: 0
 # column: value
