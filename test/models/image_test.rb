@@ -5,13 +5,10 @@ class ImageTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "approximate_shortest_route_一枚" do
-    route = Image.approximate_shortest_route([images(:syurijou)].map(&:id))
-    assert_equal route.length, 1
-  end
-
   test "approximate_shortest_route_2枚" do
-    route = Image.approximate_shortest_route([images(:syurijou), images(:kourijima)].map(&:id))
-    assert_equal route.length, 2 # 2なので順序は問わない
+    route = Image.approximate_shortest_route(images(:syurijou).id, [images(:kourijima)].map(&:id))
+    assert_equal route.length, 2
+    assert_equal route[0], images(:syurijou)
+    assert_equal route[1], images(:kourijima)
   end
 end
