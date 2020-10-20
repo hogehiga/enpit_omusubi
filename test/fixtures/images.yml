@@ -7,6 +7,8 @@
 syurijou:
   name: 首里城
   image_path: syurijou.jpg
+  lat: 0
+  lng: 0
 #
 two: {}
 # column: value
