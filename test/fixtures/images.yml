@@ -10,5 +10,8 @@ syurijou:
   lat: 0
   lng: 0
 #
-two: {}
+kourijima:
+  name: 古宇利島
+  lat: 10
+  lng: 10
 # column: value
