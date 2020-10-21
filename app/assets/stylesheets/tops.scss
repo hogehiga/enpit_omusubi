@@ -14,7 +14,7 @@ h1 {
 
 .item {
     position: relative;
-    flex-basis: 25%;
+    flex-basis: 100% / ceil(1220/400);
 }
 
 .item:before{
