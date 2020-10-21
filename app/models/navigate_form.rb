@@ -7,11 +7,11 @@ class NavigateForm
 
   def validate_images
     unless images
-      errors.add(:images, '画像を選択してください')
+      errors.add(:images, :choise)
       return
     end
     if images.length < 1
-      errors.add(:images, '画像を選択してください')
+      errors.add(:images, :choise)
     end
   end
 end

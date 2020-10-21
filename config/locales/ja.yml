@@ -1,5 +1,13 @@
 ja:
+  errors:
+    format: "%{attribute}%{message}"
   activemodel:
+    errors:
+      models:
+        navigate_form:
+          attributes:
+            images:
+              choise: を選択してください
     attributes:
       navigate_form:
         images: 画像
