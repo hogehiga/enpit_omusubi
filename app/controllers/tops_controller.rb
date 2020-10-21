@@ -13,7 +13,7 @@ class TopsController < ApplicationController
           return
         end
 
-        @route = Image.approximate_shortest_route(Image.first.id, @navigate_form.images.map(&:to_i))
+        @route = Image.approximate_shortest_route(Image.find(5).id, @navigate_form.images.map(&:to_i))
         redirect_to "https://www.google.co.jp/maps/dir/#{@route.map(&:name).join('/')}"
     end
 

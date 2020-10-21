@@ -58,3 +58,12 @@ img {
 .item img.thumbnail.checked + .disabled_checkbox {
   display: block;
 }
+
+div.route_button_wrapper {
+  text-align: center;
+  margin-top: 30px;
+  width: 100%;
+}
+.route_button {
+  font-size: large;
+}

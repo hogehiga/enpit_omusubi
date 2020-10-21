@@ -1,0 +1,5 @@
+ja:
+  activemodel:
+    attributes:
+      navigate_form:
+        images: 画像

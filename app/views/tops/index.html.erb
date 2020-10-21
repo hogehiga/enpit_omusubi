@@ -1,17 +1,18 @@
 <h1>えんむすび</h1>
 
-これはインスタ映えしそう！！　今すぐ行け！！！！
-画像をクリックするとmapが表示されます。
+これはインスタ映えしそう！！　今すぐ行け！！！！<br>
+画像を選択してルート検索を押すと、那覇空港から出発していい感じにまわっていくルートを提示します！！！
 
 <% if @navigate_form.errors.any? %>
     <% @navigate_form.errors.full_messages.each do |msg| %>
-    <%= msg %>
+        <p class="warn"><%= msg %></p>
     <% end %>
 <% end %>
 
 <%= form_with model: @navigate_form, url: '/', method: :post, local: true do |form| %>
     <div class="container">
         <% @images.each do |image| %>
+            <% next unless image.image_path %>
             <div class="item">
                 <% if @navigate_form.images && @navigate_form.images.include?(image.id.to_s) %>
                     <%= image_tag("/#{image.image_path}",:class => "thumbnail checked") %>
@@ -22,6 +23,8 @@
                 <% end %>
             </div>
         <% end %>
-        <%= form.submit "ルート検索" %>
+        <div class="route_button_wrapper">
+            <%= form.submit "ルート検索", { class: 'route_button'} %>
+        </div>
     </div>
 <% end %>
