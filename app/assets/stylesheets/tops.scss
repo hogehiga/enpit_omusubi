@@ -55,7 +55,7 @@ img {
   border: 6px solid blue;
   box-sizing: border-box;
 }
-.item img.thumbnail.checked + .disabled_checkbox {
+.item img.thumbnail.checked ~ .disabled_checkbox {
   display: block;
 }
 

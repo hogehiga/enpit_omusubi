@@ -9,22 +9,22 @@
     <% end %>
 <% end %>
 
-<%= form_with model: @navigate_form, url: '/', method: :post, local: true do |form| %>
+<%= form_with model: @navigate_form, url: '/', method: :post, local: true do |f| %>
     <div class="container">
         <% @images.each do |image| %>
             <% next unless image.image_path %>
             <div class="item">
-                <% if @navigate_form.images && @navigate_form.images.include?(image.id.to_s) %>
+                <% if @navigate_form.images && @navigate_form.images["#{image.id}"] != "0" %>
                     <%= image_tag("/#{image.image_path}",:class => "thumbnail checked") %>
-                    <input type="checkbox" name="images[]" value="<%= image.id %>" class="disabled_checkbox" checked>
+                    <%= f.check_box "images[#{image.id}]", { class: "disabled_checkbox", checked: true } %>
                 <% else %>
                     <%= image_tag("/#{image.image_path}",:class => "thumbnail") %>
-                    <input type="checkbox" name="images[]" value="<%= image.id %>" class="disabled_checkbox">
+                    <%= f.check_box "images[#{image.id}]", { class: "disabled_checkbox" } %>
                 <% end %>
             </div>
         <% end %>
         <div class="route_button_wrapper">
-            <%= form.submit "ルート検索", { class: 'route_button'} %>
+            <%= f.submit "ルート検索", { class: 'route_button'} %>
         </div>
     </div>
 <% end %>

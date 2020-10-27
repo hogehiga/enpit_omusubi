@@ -10,7 +10,9 @@ class NavigateForm
       errors.add(:images, :choise)
       return
     end
-    if images.length < 1
+
+    selected_images = images.reject{|k, v| v == "0"} # check_boxは選択されなければ0で来るので除外。idが0のものがないことが前提。
+    if selected_images.length < 1
       errors.add(:images, :choise)
     end
   end
