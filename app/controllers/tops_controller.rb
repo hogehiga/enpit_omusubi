@@ -14,7 +14,7 @@ class TopsController < ApplicationController
         end
 
         ids = @navigate_form.images.reject{|k, v| v == "0"}.map{|item| item[0]}.map(&:to_i)
-        @route = Image.approximate_shortest_route(Image.find(5).id, ids)
+        @route = Image.approximate_shortest_route(Image.where("name LIKE '%那覇空港%'").first.id, ids)
         redirect_to "https://www.google.co.jp/maps/dir/#{@route.map(&:name).join('/')}"
     end
 
