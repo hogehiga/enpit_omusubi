@@ -1,5 +1,9 @@
-<% dir_url = "https://www.google.co.jp/maps/dir"%>
-<% @images.each do |image| %>
-  <% dir_url = dir_url + "/" + image %>
+<% dir_url =  'https://www.google.co.jp/maps/dir/?api=1&dir_action=navigate&waypoints=' %>
+<% @images.each_with_index do |image, index| %>
+  <% if index == @images.size - 1 then %>
+    <% dir_url = dir_url + '&destination=' + image %>
+  <% else %>
+    <% dir_url = dir_url + image + '|' %>
+  <% end %>
 <% end %>
 <%= link_to "経路を表示", dir_url %>
