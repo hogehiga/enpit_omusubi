@@ -1,6 +1,8 @@
 $(document).on('turbolinks:load', function() {
   $('.item .disabled_checkbox').click(function() {
-    return false;
+    var prevImage = $(this).prevAll('img.thumbnail');
+    prevImage.toggleClass('checked');;
+    $(this).prop("checked", !$(this).prop('checked'));
   });
 
   // 画像がクリックされた時の処理です。
@@ -8,6 +10,6 @@ $(document).on('turbolinks:load', function() {
     // チェックを切り替えます
     $(this).toggleClass('checked');
     var nextCheckbox = $(this).nextAll('input[type=checkbox]');
-    nextCheckbox.attr("checked", !nextCheckbox.attr('checked'));
+    nextCheckbox.prop("checked", $(this).hasClass('checked'));
   });
 });
