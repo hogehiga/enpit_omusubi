@@ -20,7 +20,7 @@ class Image < ApplicationRecord
   def self.find_nearest(src, dests)
     tmp = []
     dests.each do |i|
-      tmp << {image: i, distance: Math.sqrt((i.lat - src.lat) ** 2 + (i.lng - src.lng) ** 2) }
+      tmp << {image: i, distance: (i.lat - src.lat) ** 2 + (i.lng - src.lng) ** 2 }
     end
     return tmp.sort{ |i, j| i[:distance] <=> j[:distance] }.first[:image]
   end
