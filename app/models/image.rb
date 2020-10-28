@@ -1,6 +1,6 @@
 class Image < ApplicationRecord
 
-  # グリーディ法
+  # 最近傍法
   def self.approximate_shortest_route(start_image_id, image_ids)
     images = []
     src = find(start_image_id)
