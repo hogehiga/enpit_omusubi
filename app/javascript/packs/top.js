@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function() {
   $('.item .disabled_checkbox').click(function() {
     var prevImage = $(this).prevAll('img.thumbnail');
     prevImage.toggleClass('checked');;
-    $(this).prop("checked", !$(this).prop('checked'));
+    // チェックボックスのクリックなので、toggleの処理は不要(ブラウザが勝手にやってくれる)
   });
 
   // 画像がクリックされた時の処理です。
