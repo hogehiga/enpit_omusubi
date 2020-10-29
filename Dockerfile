@@ -13,6 +13,10 @@ WORKDIR /omusubi
 COPY Gemfile /omusubi/Gemfile
 COPY Gemfile.lock /omusubi/Gemfile.lock
 RUN bundle install
+
+COPY package.json /omusubi
+RUN yarn install
+
 COPY . /omusubi
 
 # Add a script to be executed every time the container starts.
